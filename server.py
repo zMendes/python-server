@@ -10,11 +10,7 @@ def control():
 
 @app.route('/status', methods = ['POST', 'GET'])
 def status():
-   global led
-   global but
-   global ts
-   global id
-   global pot
+   global led, but, id, ts, pot
    if request.method == 'POST':
       print("Entei no post: {0}".format(request.form['TS']))
       status = request.form
@@ -27,5 +23,5 @@ def status():
    return jsonify({'led' : led,'but':but,"id":id,"ts":ts, "pot":pot}),200
 
 if __name__ == '__main__':
-   port = int(os.environ.get("PORT", 5000))
+   port = int(os.environ.get("PORT", 80))
    app.run(host='0.0.0.0', debug=True,port=port)
