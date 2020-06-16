@@ -29,6 +29,7 @@ def status():
          ts0 = status['TS'][0:22]
          pot0 = status['POT'][0:4]
       else:
+         status = request.form
          id1 = status['ID']
          but1 = status['BUT']
          ts1 = status['TS'][0:22]
