@@ -12,13 +12,13 @@ ts1 = "2020-01-01-00:00:00GMT"
 pot1 = 0
 
 app = Flask(__name__)
-@app.route('/', methods = ['POST', 'GET'])
+@app.route('/home/status', methods = ['POST', 'GET'])
 def status():
    global but0,id0,ts0,pot0,but1,id1,ts1,pot1
 
    if request.method == 'POST':
       print("Entei no post: {0}".format(request.form['TS']))
-      if(request.form['ID']==0):
+      if(request.form['ID']=="0"):
          status = request.form
          id0 = status['ID']
          but0 = status['BUT']
