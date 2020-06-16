@@ -1,14 +1,15 @@
 import os
 from flask import Flask, render_template, request, jsonify
 from flask_restful import Resource, Api
-global but0 = 0  
-global id0= 0
-global ts0 = "2020-01-01-00:00:00GMT" 
-global pot0 = 0
-global but1=0 
-global id1 = 
-global ts1 = "2020-01-01-00:00:00GMT" 
-global pot1 = 0
+
+but0 = 0  
+id0= 0
+ts0 = "2020-01-01-00:00:00GMT" 
+pot0 = 0
+but1=0 
+id1 = 1
+ts1 = "2020-01-01-00:00:00GMT" 
+pot1 = 0
 
 app = Flask(__name__)
 @app.route('/')
@@ -17,6 +18,7 @@ def control():
 
 @app.route('/home/status', methods = ['POST', 'GET'])
 def status():
+   global but0,id0,ts0,pot0,but1,id1,ts1,pot1
 
    if request.method == 'POST':
       print("Entei no post: {0}".format(request.form['TS']))
