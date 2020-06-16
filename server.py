@@ -12,11 +12,7 @@ ts1 = "2020-01-01-00:00:00GMT"
 pot1 = 0
 
 app = Flask(__name__)
-@app.route('/')
-def control():
-   return render_template('index.html')
-
-@app.route('/home/status', methods = ['POST', 'GET'])
+@app.route('/', methods = ['POST', 'GET'])
 def status():
    global but0,id0,ts0,pot0,but1,id1,ts1,pot1
 
