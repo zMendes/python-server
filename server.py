@@ -1,8 +1,6 @@
 import os
 from flask import Flask, render_template, request, jsonify
 from flask_restful import Resource, Api
-
-app = Flask(__name__)
 global but0 = 0  
 global id0= 0
 global ts0 = "2020-01-01-00:00:00GMT" 
@@ -11,6 +9,8 @@ global but1=0
 global id1 = 
 global ts1 = "2020-01-01-00:00:00GMT" 
 global pot1 = 0
+
+app = Flask(__name__)
 @app.route('/')
 def control():
    return render_template('index.html')
