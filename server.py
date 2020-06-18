@@ -31,9 +31,13 @@ def status():
       else:
          status = request.form
          id1 = status['ID']
-         but1 = status['BUT']
          ts1 = status['TS'][0:22]
-         pot1 = status['POT'][0:4]
+         if (status['TYPE']=="0"):
+            print("entrou no afec")
+            pot1 = status['POT'][0:4]
+         else:
+            print("entrou no dig")
+            but1 = status['BUT']
 
    return jsonify({"id":id0,"ts":ts0,"but":but0, "pot":pot0},{"id":id1,"ts":ts1,"but":but1, "pot":pot1}),200
 
