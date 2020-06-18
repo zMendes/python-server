@@ -21,14 +21,16 @@ def status():
       if(request.form['ID']=="0"):
          status = request.form
          id0 = status['ID']
-         print(status['BUT'])
-         but0 = status['BUT']
          ts0 = status['TS'][0:22]
-         pot0 = status['POT'][0:4]
+         if (status['TYPE']=="0"):
+            print("entrou no afec")
+            pot0 = status['POT'][0:4]
+         else:
+            print("entrou no dig")
+            but0 = status['BUT']
       else:
          status = request.form
          id1 = status['ID']
-         print(status['BUT'])
          but1 = status['BUT']
          ts1 = status['TS'][0:22]
          pot1 = status['POT'][0:4]
